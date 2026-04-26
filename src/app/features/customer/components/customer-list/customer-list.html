@@ -1,0 +1,26 @@
+<h3>Customers</h3>
+
+<table *ngIf="customers.length; else empty">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>DOB</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let c of customers">
+      <td>{{ c.id }}</td>
+      <td>{{ c.firstName }} {{ c.lastName }}</td>
+      <td>{{ c.email }}</td>
+      <td>{{ c.phone }}</td>
+      <td>{{ c.dateOfBirth }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #empty>
+  <p>No customers yet.</p>
+</ng-template>

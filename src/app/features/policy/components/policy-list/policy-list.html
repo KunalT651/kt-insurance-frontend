@@ -1,0 +1,30 @@
+<h3>Policies</h3>
+
+<table *ngIf="policies.length; else empty">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Policy #</th>
+      <th>Customer ID</th>
+      <th>Type</th>
+      <th>Premium</th>
+      <th>Start</th>
+      <th>End</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let p of policies">
+      <td>{{ p.id }}</td>
+      <td>{{ p.policyNumber }}</td>
+      <td>{{ p.customerId }}</td>
+      <td>{{ p.policyType }}</td>
+      <td>{{ p.premiumAmount }}</td>
+      <td>{{ p.startDate }}</td>
+      <td>{{ p.endDate }}</td>
+    </tr>
+  </tbody>
+</table>
+
+<ng-template #empty>
+  <p>No policies yet.</p>
+</ng-template>
